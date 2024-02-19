@@ -1,11 +1,21 @@
+import os
+
 #Functions
+def clear_terminal():
+    os.system('cls' if os.name == 'nt' else 'clear')
+
 def MenuSystem():
     global menuchoice
     choice = [1,2,3,4]
+
+    clear_terminal()
+
     print("1) Binary\n2) Any Base\n3) Hex\n4) Quit")
     menuchoice = int(input("\nPlease input your selection: "))
     while menuchoice not in choice:
         menuchoice = int(input("Please input a valid choice: "))
+
+    clear_terminal()
 
 def ArrayToString(my_array):
     array_string = ''.join(map(str, my_array))
